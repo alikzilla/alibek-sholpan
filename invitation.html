@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Caveat:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -17,24 +17,6 @@
           url("https://static.tildacdn.com/tild6163-3262-4734-b339-353636343334/_AsylbekM02Shelleykz.woff2")
             format("woff2"),
           url("https://static.tildacdn.com/tild3630-6366-4566-b932-636438666133/AsylbekM02Shelleykz_.woff")
-            format("woff");
-        font-weight: 100 900;
-      }
-      @font-face {
-        font-family: "monument";
-        src:
-          url("https://static.tildacdn.com/tild6636-3137-4839-b333-316466333966/KZPFMonumentaPro-Reg.woff2")
-            format("woff2"),
-          url("https://static.tildacdn.com/tild6135-6436-4032-a135-343931663462/KZPFMonumentaPro-Reg.woff")
-            format("woff");
-        font-weight: 100 900;
-      }
-      @font-face {
-        font-family: "ventura";
-        src:
-          url("https://static.tildacdn.com/tild3363-3863-4261-a434-393938636235/Kz_Ventura_Script_.woff2")
-            format("woff2"),
-          url("https://static.tildacdn.com/tild3433-3866-4637-b738-316166366435/Kz_Ventura-Script_.woff")
             format("woff");
         font-weight: 100 900;
       }
@@ -54,7 +36,7 @@
         padding: 0;
       }
       body {
-        font-family: "monument", Arial, sans-serif;
+        font-family: "Cormorant Garamond", Arial, sans-serif;
         background: var(--cream);
         color: var(--text-dark);
       }
@@ -89,16 +71,19 @@
         height: 550px;
         overflow: hidden;
       }
-      .hero-video-wrap video {
+      .hero-video-wrap video,
+      .hero-video-wrap > img {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top;
       }
       .hero-overlay {
         position: absolute;
         inset: 0;
+        background: rgba(0, 0, 0, 0.18);
       }
       /* names image — upper area of hero */
       .hero-names-img {
@@ -108,6 +93,7 @@
         transform: translateX(-50%);
         width: min(245px, 70vw);
         pointer-events: none;
+        filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.75));
       }
       /* music button wraps the rotating ornament + play/stop icons */
       #music-btn {
@@ -170,22 +156,55 @@
       .names-container {
         display: flex;
         align-items: end;
-        gap: 18px;
         margin-bottom: 100px;
       }
-      .names-date-img {
-        width: min(130px, 36vw);
+      .names-date-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Cormorant Garamond, serif;
+        font-weight: 300;
+        font-size: clamp(4rem, 17vw, 7.5rem);
+        line-height: 1.05;
+        color: var(--text-dark);
+        width: min(180px, 46vw);
+        text-align: center;
       }
       .names-hline {
         width: 1px;
         height: min(200px, 55vw);
         background: rgba(69, 66, 66, 0.3);
       }
-      .names-title-img {
-        width: min(170px, 58vw);
+      .names-title-text {
+        font-family: Cormorant Garamond, serif;
+        font-weight: 300;
+        font-size: clamp(1.6rem, 6vw, 3rem);
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text-dark);
+        width: min(220px, 68vw);
+        text-align: center;
+        line-height: 1.5;
       }
-      .names-couple-img {
-        width: min(260px, 72vw);
+      .names-couple-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: var(--text-dark);
+        text-align: center;
+        letter-spacing: 0.12em;
+      }
+      .names-couple-name {
+        font-size: clamp(2.2rem, 11vw, 3.8rem);
+        line-height: 1.05;
+      }
+      .names-couple-amp {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        line-height: 1.6;
+        font-style: italic;
       }
 
       /* ── INVITE ─────────────────────────────── */
@@ -202,7 +221,7 @@
         width: 320px;
         text-align: center;
         font:
-          18px/1.55 Georgia,
+          18px/1.55 "Cormorant Garamond",
           serif;
         color: var(--text-light);
         z-index: 1;
@@ -214,7 +233,7 @@
         left: calc(50% - 147px);
         width: 295px;
         font:
-          18px/1.55 Georgia,
+          18px/1.55 "Cormorant Garamond",
           serif;
         text-align: center;
         color: var(--text-light);
@@ -235,7 +254,7 @@
         left: calc(50% - 147px);
         width: 295px;
         font:
-          18px/1.55 Georgia,
+          18px/1.55 "Cormorant Garamond",
           serif;
         color: var(--text-light);
         text-align: center;
@@ -313,11 +332,11 @@
         margin-bottom: 8px;
       }
       .location-label {
-        font: 18px/1.55 Georgia, serif;
+        font: 18px/1.55 "Cormorant Garamond", serif;
         color: #2d2a2a;
       }
       .location-address {
-        font: 18px/1.55 Georgia, serif;
+        font: 18px/1.55 "Cormorant Garamond", serif;
         color: #2d2a2a;
       }
       .location-map-btn {
@@ -335,12 +354,12 @@
         object-fit: cover;
       }
       .location-map-click {
-        font: 13px/1.55 Georgia, serif;
+        font: 13px/1.55 "Cormorant Garamond", serif;
         color: #2d2a2a;
         margin-top: -4px;
       }
       .location-map-hint {
-        font: 15px/1.55 Georgia, serif;
+        font: 15px/1.55 "Cormorant Garamond", serif;
         color: #2d2a2a;
         max-width: 320px;
       }
@@ -445,13 +464,13 @@
         object-fit: cover;
       }
       .sched-name {
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 0.95rem;
         color: var(--text-dark);
         line-height: 1.5;
       }
       .sched-time {
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 1rem;
         font-weight: bold;
         color: var(--text-dark);
@@ -481,10 +500,11 @@
       }
       .countdown-title {
         font:
-          21px/1.55 Georgia,
+          21px/1.55 "Cormorant Garamond",
           serif;
         color: #ffffff;
         position: relative;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       }
       .countdown-grid {
         display: flex;
@@ -504,18 +524,20 @@
         gap: 4px;
       }
       .cnt-number {
-        font-family: "Comfortaa", "monument", Arial, sans-serif;
+        font-family: "Cormorant Garamond", Arial, sans-serif;
         font-size: 29px;
         line-height: 1;
         color: #ffffff;
         text-align: center;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       }
       .cnt-sep {
-        font-family: "Comfortaa", "monument", Arial, sans-serif;
+        font-family: "Cormorant Garamond", Arial, sans-serif;
         font-size: 29px;
         color: #ffffff;
         line-height: 72px;
         padding: 0 4px;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       }
       .cnt-label {
         font-family: Arial, sans-serif;
@@ -526,6 +548,7 @@
         position: absolute;
         bottom: -18px;
         white-space: nowrap;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       }
       @media (min-width: 481px) {
         #countdown {
@@ -547,7 +570,7 @@
       }
       .rsvp-title {
         font:
-          20px/1.55 Georgia,
+          20px/1.55 "Cormorant Garamond",
           serif;
         color: #000000;
         text-align: center;
@@ -562,7 +585,7 @@
       }
       .rsvp-field-label {
         display: block;
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 18px;
         font-weight: 400;
         margin-bottom: 8px;
@@ -575,7 +598,7 @@
         border-radius: 20px;
         height: 50px;
         padding: 0 16px;
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 17px;
         color: #000000;
         outline: none;
@@ -598,7 +621,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 18px;
         font-weight: 400;
         color: #000000;
@@ -617,7 +640,7 @@
         border: none;
         width: 160px;
         height: 50px;
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 19px;
         font-weight: 600;
         cursor: pointer;
@@ -632,7 +655,7 @@
         cursor: not-allowed;
       }
       #rsvp-msg {
-        font-family: Georgia, serif;
+        font-family: "Cormorant Garamond", serif;
         font-size: 0.9rem;
         text-align: center;
         min-height: 1.4em;
@@ -646,29 +669,26 @@
         height: 400px;
         overflow: hidden;
       }
-      .footer-closing {
+      .footer-orn1 {
         position: absolute;
-        top: 60px;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .footer-orn2 {
+        position: absolute;
+        top: 120px;
         left: 0;
         width: 100%;
         text-align: center;
         font:
-          20px/1.55 "Kazaksha",
+          italic 36px/1.55 "Kazaksha",
           Georgia,
           serif;
-        color: #000000;
-      }
-      .footer-orn1 {
-        position: absolute;
-        top: 0;
-        left: calc(50% - 199px);
-        width: 398px;
-      }
-      .footer-orn2 {
-        position: absolute;
-        top: 43px;
-        left: calc(50% - 166px);
-        width: 332px;
+        color: #ffffff;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
       }
       .footer-credit {
         position: absolute;
@@ -687,20 +707,11 @@
         #footer {
           height: 550px;
         }
-        .footer-orn1 {
-          top: 20px;
-          left: calc(50% - 300px);
-          width: 560px;
-        }
+
         .footer-orn2 {
-          top: 60px;
-          left: calc(50% - 254px);
-          width: 460px;
-        }
-        .footer-closing {
           top: 348px;
-          font-size: 29px;
-          color: #2c5542;
+          font-size: 46px;
+          color: #ffffff;
         }
         .footer-credit {
           top: 480px;
@@ -756,15 +767,19 @@
     <!-- ── Names / Date ── -->
     <section id="names">
       <div class="names-container">
-        <img class="names-date-img" src="assets/names/date.png" alt="26.04.2025" />
+        <div class="names-date-text">
+          <span>24</span>
+          <span>08</span>
+          <span>26</span>
+        </div>
         <div class="names-hline"></div>
-        <img class="names-title-img" src="assets/names/names.png" alt="ТОЙ КҮНІ" />
+        <div class="names-title-text">ТОЙ КҮНІ</div>
       </div>
-      <img
-        class="names-couple-img"
-        src="assets/names/ornament-names.png"
-        alt="Бахтияр & Аяжан"
-      />
+      <div class="names-couple-text">
+        <span class="names-couple-name">ALIBEK</span>
+        <span class="names-couple-amp">&amp;</span>
+        <span class="names-couple-name">SHOLPAN</span>
+      </div>
     </section>
 
     <!-- ── Invite ── -->
@@ -981,7 +996,7 @@
         style="
           margin-top: 16px;
           text-align: center;
-          font-family: Georgia, serif;
+          font-family: Cormorant Garamond, serif;
           font-size: 15px;
           color: #7a6660;
         "
@@ -992,11 +1007,10 @@
 
     <!-- ── Footer ── -->
     <section id="footer">
-      <p class="footer-closing">
+      <img class="footer-orn1" src="assets/footer/footer-text.png" alt="" />
+      <p class="footer-orn2">
         Келіңіздер,<br />қуанышымызға ортақ<br />болыңыздар!
       </p>
-      <img class="footer-orn1" src="assets/footer/footer-text.png" alt="" />
-      <img class="footer-orn2" src="assets/footer/footer-ornament.png" alt="" />
     </section>
 
     <!-- Music player -->
